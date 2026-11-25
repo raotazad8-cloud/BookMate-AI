@@ -1,0 +1,537 @@
+{
+  "version": "1.0.0",
+  "currentYear": 2026,
+  "lastChecked": "2026-11-25",
+  "source": "Administrator-verified NCTB manifest (sample data)",
+  "classes": [
+    {
+      "class": 1,
+      "subjects": [
+        {
+          "id": "class-1-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-1/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-1-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-1/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-1-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-1/math.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 2,
+      "subjects": [
+        {
+          "id": "class-2-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-2/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-2-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-2/english.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 3,
+      "subjects": [
+        {
+          "id": "class-3-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-3/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-3-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-3/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-3-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-3/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-3-science",
+          "name": "Science",
+          "nameBn": "বিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-3/science.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 4,
+      "subjects": [
+        {
+          "id": "class-4-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-4/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-4-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-4/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-4-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-4/math.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 5,
+      "subjects": [
+        {
+          "id": "class-5-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-5/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-5-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-5/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-5-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-5/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-5-science",
+          "name": "Science",
+          "nameBn": "বিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-5/science.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-5-social",
+          "name": "Social Science",
+          "nameBn": "সামাজিক বিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-5/social.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 6,
+      "subjects": [
+        {
+          "id": "class-6-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-6/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-6-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-6/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-6-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-6/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-6-science",
+          "name": "Science",
+          "nameBn": "বিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-6/science.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 7,
+      "subjects": [
+        {
+          "id": "class-7-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-7/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-7-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-7/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-7-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-7/math.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 8,
+      "subjects": [
+        {
+          "id": "class-8-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-8/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-8-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-8/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-8-math",
+          "name": "Mathematics",
+          "nameBn": "গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-8/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-8-science",
+          "name": "Science",
+          "nameBn": "বিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-8/science.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 9,
+      "subjects": [
+        {
+          "id": "class-9-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-9/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-9-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-9/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-9-math",
+          "name": "General Mathematics",
+          "nameBn": "সাধারণ গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-9/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-9-physics",
+          "name": "Physics",
+          "nameBn": "পদার্থবিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-9/physics.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-9-chemistry",
+          "name": "Chemistry",
+          "nameBn": "রসায়ন",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-9/chemistry.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-9-biology",
+          "name": "Biology",
+          "nameBn": "জীববিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-9/biology.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 10,
+      "subjects": [
+        {
+          "id": "class-10-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-10/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-10-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-10/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-10-math",
+          "name": "General Mathematics",
+          "nameBn": "সাধারণ গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-10/math.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-10-physics",
+          "name": "Physics",
+          "nameBn": "পদার্থবিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-10/physics.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-10-chemistry",
+          "name": "Chemistry",
+          "nameBn": "রসায়ন",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-10/chemistry.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-10-biology",
+          "name": "Biology",
+          "nameBn": "জীববিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-10/biology.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 11,
+      "subjects": [
+        {
+          "id": "class-11-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-11/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-11-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-11/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-11-physics",
+          "name": "Physics",
+          "nameBn": "পদার্থবিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-11/physics.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-11-chemistry",
+          "name": "Chemistry",
+          "nameBn": "রসায়ন",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-11/chemistry.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-11-biology",
+          "name": "Biology",
+          "nameBn": "জীববিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-11/biology.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-11-higher-math",
+          "name": "Higher Mathematics",
+          "nameBn": "উচ্চতর গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-11/higher-math.pdf",
+          "status": "example"
+        }
+      ]
+    },
+    {
+      "class": 12,
+      "subjects": [
+        {
+          "id": "class-12-bangla",
+          "name": "Bangla",
+          "nameBn": "বাংলা",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-12/bangla.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-12-english",
+          "name": "English",
+          "nameBn": "ইংরেজি",
+          "language": "en",
+          "year": 2026,
+          "file": "/books/class-12/english.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-12-physics",
+          "name": "Physics",
+          "nameBn": "পদার্থবিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-12/physics.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-12-chemistry",
+          "name": "Chemistry",
+          "nameBn": "রসায়ন",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-12/chemistry.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-12-biology",
+          "name": "Biology",
+          "nameBn": "জীববিজ্ঞান",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-12/biology.pdf",
+          "status": "example"
+        },
+        {
+          "id": "class-12-higher-math",
+          "name": "Higher Mathematics",
+          "nameBn": "উচ্চতর গণিত",
+          "language": "bn",
+          "year": 2026,
+          "file": "/books/class-12/higher-math.pdf",
+          "status": "example"
+        }
+      ]
+    }
+  ],
+  "note": "All entries are labelled as 'example'. Replace with real NCTB PDF paths after uploading books to the GitHub repository. Missing PDFs show a friendly empty state."
+}

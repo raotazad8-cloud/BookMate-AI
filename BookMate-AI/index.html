@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="BookMate AI — NCTB Edition: Offline-first educational book reader for Bangladesh students (Class 1–12)" />
+  <meta name="theme-color" content="#0f766e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>BookMate AI — NCTB Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+<body>
+  <!-- Offline Indicator -->
+  <div id="offline-banner" class="offline-banner hidden" role="status">
+    <span data-i18n="offline">You are offline. Cached books remain available.</span>
+  </div>
+
+  <!-- App Shell -->
+  <div id="app" class="app">
+    <!-- Sidebar (Desktop) -->
+    <aside id="sidebar" class="sidebar glass">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">📚</span>
+          <div class="logo-text">
+            <span class="logo-title">BookMate AI</span>
+            <span class="logo-sub">NCTB Edition</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="dashboard" data-i18n-title="nav.dashboard">
+          <span class="nav-icon">🏠</span>
+          <span data-i18n="nav.dashboard">Dashboard</span>
+        </button>
+        <button class="nav-item" data-view="library" data-i18n-title="nav.library">
+          <span class="nav-icon">📖</span>
+          <span data-i18n="nav.library">NCTB Library</span>
+        </button>
+        <button class="nav-item" data-view="my-library" data-i18n-title="nav.myLibrary">
+          <span class="nav-icon">📁</span>
+          <span data-i18n="nav.myLibrary">My Library</span>
+        </button>
+        <button class="nav-item" data-view="upload" data-i18n-title="nav.upload">
+          <span class="nav-icon">⬆️</span>
+          <span data-i18n="nav.upload">Upload Book</span>
+        </button>
+        <button class="nav-item" data-view="ai" data-i18n-title="nav.ai">
+          <span class="nav-icon">🤖</span>
+          <span data-i18n="nav.ai">AI Assistant</span>
+        </button>
+        <button class="nav-item" data-view="admin" data-i18n-title="nav.admin">
+          <span class="nav-icon">⚙️</span>
+          <span data-i18n="nav.admin">Admin</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="theme-toggle">
+          <button id="theme-btn" class="icon-btn" title="Toggle theme">🌓</button>
+        </div>
+        <div class="lang-switcher">
+          <button id="lang-bn" class="lang-btn" data-lang="bn">বাংলা</button>
+          <button id="lang-en" class="lang-btn active" data-lang="en">EN</button>
+        </div>
+        <div class="status-row">
+          <span id="online-status" class="status-dot online"></span>
+          <span id="last-checked" class="last-checked"></span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main" class="main">
+      <!-- Top Bar (Mobile) -->
+      <header class="topbar glass">
+        <button id="menu-btn" class="icon-btn mobile-only">☰</button>
+        <div class="topbar-title">
+          <span class="logo-icon">📚</span>
+          <span>BookMate AI</span>
+        </div>
+        <button id="theme-btn-mobile" class="icon-btn">🌓</button>
+      </header>
+
+      <!-- Views Container -->
+      <div id="views" class="views">
+        <!-- DASHBOARD -->
+        <section id="view-dashboard" class="view active">
+          <div class="view-header">
+            <h1 data-i18n="dashboard.welcome">Welcome to BookMate AI</h1>
+            <p class="subtitle" data-i18n="dashboard.subtitle">Your offline-first NCTB book companion for Class 1–12</p>
+          </div>
+
+          <div class="search-bar glass">
+            <input type="search" id="global-search" placeholder="Search books, subjects..." data-i18n-placeholder="search.placeholder" />
+            <button id="search-btn" class="btn primary">🔍</button>
+          </div>
+
+          <div class="quick-actions">
+            <button class="action-card glass" data-view="library">
+              <span class="action-icon">📖</span>
+              <span data-i18n="actions.browse">Browse NCTB</span>
+            </button>
+            <button class="action-card glass" data-view="upload">
+              <span class="action-icon">⬆️</span>
+              <span data-i18n="actions.upload">Upload Book</span>
+            </button>
+            <button class="action-card glass" data-view="ai">
+              <span class="action-icon">🤖</span>
+              <span data-i18n="actions.ai">Ask AI</span>
+            </button>
+            <button class="action-card glass" data-view="my-library">
+              <span class="action-icon">📁</span>
+              <span data-i18n="actions.myBooks">My Books</span>
+            </button>
+          </div>
+
+          <div class="section">
+            <h2 data-i18n="dashboard.classSelect">Select Class</h2>
+            <div id="class-grid" class="class-grid"></div>
+          </div>
+
+          <div class="section">
+            <h2 data-i18n="dashboard.recent">Recently Opened</h2>
+            <div id="recent-books" class="book-grid">
+              <div class="empty-state" data-i18n="empty.recent">No recently opened books yet.</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 data-i18n="dashboard.updates">Curriculum Status</h2>
+            <div id="curriculum-status" class="glass card status-card">
+              <p><strong data-i18n="status.version">Version:</strong> <span id="curr-version">—</span></p>
+              <p><strong data-i18n="status.year">Academic Year:</strong> <span id="curr-year">—</span></p>
+              <p><strong data-i18n="status.lastChecked">Last Checked:</strong> <span id="curr-checked">—</span></p>
+              <button id="refresh-catalog" class="btn secondary" data-i18n="status.refresh">Refresh Catalog</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- NCTB LIBRARY -->
+        <section id="view-library" class="view">
+          <div class="view-header">
+            <h1 data-i18n="library.title">NCTB Book Library</h1>
+            <p class="subtitle" data-i18n="library.subtitle">Class 1 – 12 · Official curriculum books</p>
+          </div>
+          <div class="filters glass">
+            <select id="filter-class">
+              <option value="">All Classes</option>
+            </select>
+            <select id="filter-lang">
+              <option value="">All Languages</option>
+              <option value="bn">বাংলা</option>
+              <option value="en">English</option>
+            </select>
+            <input type="search" id="library-search" placeholder="Filter books..." data-i18n-placeholder="search.filter" />
+          </div>
+          <div id="library-content" class="library-content">
+            <div class="loading" data-i18n="loading">Loading catalog…</div>
+          </div>
+        </section>
+
+        <!-- MY LIBRARY -->
+        <section id="view-my-library" class="view">
+          <div class="view-header">
+            <h1 data-i18n="myLibrary.title">My Library</h1>
+            <p class="subtitle" data-i18n="myLibrary.subtitle">Books you uploaded (stored locally)</p>
+          </div>
+          <div id="my-books-list" class="book-grid">
+            <div class="empty-state" data-i18n="empty.myBooks">No uploaded books yet. Upload a PDF or TXT file.</div>
+          </div>
+        </section>
+
+        <!-- UPLOAD -->
+        <section id="view-upload" class="view">
+          <div class="view-header">
+            <h1 data-i18n="upload.title">Upload Book</h1>
+            <p class="subtitle" data-i18n="upload.subtitle">Store PDF or TXT files locally in your browser</p>
+          </div>
+          <form id="upload-form" class="glass card upload-form">
+            <div class="form-group">
+              <label data-i18n="upload.file">Select File (PDF or TXT, max 50 MB)</label>
+              <input type="file" id="upload-file" accept=".pdf,.txt,application/pdf,text/plain" required />
+            </div>
+            <div class="form-group">
+              <label data-i18n="upload.titleLabel">Book Title</label>
+              <input type="text" id="upload-title" required maxlength="200" placeholder="e.g. Class 9 Physics Notes" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="upload.class">Class</label>
+                <select id="upload-class" required>
+                  <option value="">Select</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label data-i18n="upload.subject">Subject</label>
+                <input type="text" id="upload-subject" maxlength="100" placeholder="e.g. Physics" />
+              </div>
+              <div class="form-group">
+                <label data-i18n="upload.language">Language</label>
+                <select id="upload-lang">
+                  <option value="bn">বাংলা</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn primary full" data-i18n="upload.submit">Upload & Save Locally</button>
+            <p class="hint" data-i18n="upload.hint">Files stay on this device only. They are never sent to any server.</p>
+          </form>
+        </section>
+
+        <!-- AI ASSISTANT -->
+        <section id="view-ai" class="view">
+          <div class="view-header">
+            <h1 data-i18n="ai.title">AI Assistant</h1>
+            <p class="subtitle" data-i18n="ai.subtitle">Ask questions about the currently open book</p>
+          </div>
+          <div class="ai-panel glass">
+            <div id="ai-status" class="ai-status">
+              <span class="badge warning" data-i18n="ai.fallback">Book-search mode (local AI model not loaded)</span>
+            </div>
+            <div id="ai-messages" class="ai-messages"></div>
+            <div class="ai-input-row">
+              <input type="text" id="ai-input" placeholder="Ask about the book..." data-i18n-placeholder="ai.placeholder" maxlength="500" />
+              <button id="ai-send" class="btn primary">➤</button>
+            </div>
+            <p class="hint" data-i18n="ai.hint">Answers are generated from book text search when the local model is unavailable. No private content is sent externally without your permission.</p>
+          </div>
+        </section>
+
+        <!-- ADMIN -->
+        <section id="view-admin" class="view">
+          <div class="view-header">
+            <h1 data-i18n="admin.title">Admin — Catalog Manager</h1>
+            <p class="subtitle" data-i18n="admin.subtitle">Edit curriculum.json locally, then download & publish via GitHub</p>
+          </div>
+          <div class="admin-panel glass card">
+            <div class="admin-warning">
+              <strong data-i18n="admin.warningTitle">Important:</strong>
+              <span data-i18n="admin.warning">This is a static site. Changes here are not saved to GitHub automatically. Download the updated JSON and commit it to your repository.</span>
+            </div>
+            <div class="form-group">
+              <label>Class</label>
+              <select id="admin-class"></select>
+            </div>
+            <div class="form-group">
+              <label>Subject Name (EN)</label>
+              <input type="text" id="admin-name" maxlength="100" />
+            </div>
+            <div class="form-group">
+              <label>Subject Name (BN)</label>
+              <input type="text" id="admin-name-bn" maxlength="100" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Language</label>
+                <select id="admin-lang">
+                  <option value="bn">bn</option>
+                  <option value="en">en</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Year</label>
+                <input type="number" id="admin-year" min="2020" max="2030" value="2026" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>PDF Path (relative to /books/)</label>
+              <input type="text" id="admin-file" placeholder="/books/class-9/physics.pdf" />
+            </div>
+            <div class="admin-actions">
+              <button id="admin-add" class="btn primary" data-i18n="admin.add">Add Entry</button>
+              <button id="admin-download" class="btn secondary" data-i18n="admin.download">Download curriculum.json</button>
+              <button id="admin-validate" class="btn secondary" data-i18n="admin.validate">Validate Missing Files</button>
+            </div>
+            <div id="admin-log" class="admin-log"></div>
+          </div>
+        </section>
+
+        <!-- READER VIEW -->
+        <section id="view-reader" class="view">
+          <div class="reader-toolbar glass">
+            <button id="reader-back" class="icon-btn">←</button>
+            <span id="reader-title" class="reader-title">Book</span>
+            <div class="reader-controls">
+              <button id="zoom-out" class="icon-btn">−</button>
+              <span id="page-info">1 / 1</span>
+              <button id="zoom-in" class="icon-btn">+</button>
+              <button id="prev-page" class="icon-btn">◀</button>
+              <button id="next-page" class="icon-btn">▶</button>
+              <button id="fullscreen-btn" class="icon-btn">⛶</button>
+              <button id="bookmark-btn" class="icon-btn">🔖</button>
+              <button id="search-in-book" class="icon-btn">🔍</button>
+            </div>
+          </div>
+          <div id="reader-container" class="reader-container">
+            <canvas id="pdf-canvas"></canvas>
+            <div id="text-layer" class="text-layer"></div>
+          </div>
+          <div id="reader-search-panel" class="search-panel glass hidden">
+            <input type="search" id="book-search-input" placeholder="Search in book..." />
+            <button id="book-search-btn" class="btn primary">Search</button>
+            <div id="search-results"></div>
+          </div>
+          <div class="reader-progress">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Bottom Nav (Mobile) -->
+    <nav id="bottom-nav" class="bottom-nav glass mobile-only">
+      <button class="nav-item active" data-view="dashboard">
+        <span class="nav-icon">🏠</span>
+        <span data-i18n="nav.dashboard">Home</span>
+      </button>
+      <button class="nav-item" data-view="library">
+        <span class="nav-icon">📖</span>
+        <span data-i18n="nav.library">Library</span>
+      </button>
+      <button class="nav-item" data-view="my-library">
+        <span class="nav-icon">📁</span>
+        <span data-i18n="nav.myLibrary">Mine</span>
+      </button>
+      <button class="nav-item" data-view="ai">
+        <span class="nav-icon">🤖</span>
+        <span data-i18n="nav.ai">AI</span>
+      </button>
+      <button class="nav-item" data-view="upload">
+        <span class="nav-icon">⬆️</span>
+        <span data-i18n="nav.upload">Upload</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
